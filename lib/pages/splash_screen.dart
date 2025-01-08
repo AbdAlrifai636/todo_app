@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   double leftPen = 260;
   animation() async {
     await Future.delayed(
-      const Duration(seconds: 1),
+      const Duration(seconds: 2),
       () {
         if (!mounted) return;
         setState(() {
@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
         });
 
         Future.delayed(
-          const Duration(seconds: 2),
+          const Duration(seconds: 3),
           () {
             if (!mounted) return;
             setState(() {
@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
     );
 
     await Future.delayed(
-      const Duration(seconds: 6),
+      const Duration(seconds: 8),
       () {
         if (!mounted) return;
         //*************************************************** this from stackoverflow site(animation with navigation)
