@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:todo/pages/splash_screen2.dart';
+import 'package:todo/pages/splash_page/splash_page2.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashPage extends StatefulWidget {
+  const SplashPage({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashPageState extends State<SplashPage> {
   double opacity = 1;
   double opacity2 = 0;
   double topPen = 375;
   double leftPen = 260;
-  animation() async {
+  _animation() async {
     await Future.delayed(
       const Duration(seconds: 2),
       () {
@@ -45,9 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
           context,
           PageRouteBuilder(
-            pageBuilder: (_, __, ___) => const SplashScreen2(),
+            pageBuilder: (_, __, ___) => const SplashPage2(),
             transitionDuration: const Duration(seconds: 2),
-            transitionsBuilder: (_, a, __, c) => FadeTransition(opacity: a, child: c),
+            transitionsBuilder: (_, a, __, c) =>
+                FadeTransition(opacity: a, child: c),
           ),
         );
       },
@@ -56,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    animation();
+    _animation();
 
     return Scaffold(
       backgroundColor: Colors.white,
